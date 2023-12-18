@@ -1,24 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { InputHTMLAttributes, forwardRef } from "react";
 
-export const NotehubInput = () => {
-  const [input, setInput] = useState<string>("");
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
-
+export const NotehubInput = forwardRef<
+  HTMLInputElement, // type of the ref that will be forwarded to the underlying <input> element
+  InputHTMLAttributes<HTMLInputElement> // type of the props object that the component accepts
+>(({ type, className, value, onChange, placeholder }, ref) => {
   return (
     <input
-      type="text"
-      className="w-full px-5 py-2 bg-transparent border-2 outline-none border-zinc-600 rounded-xl 
-            placeholder:text-zinc-500 focus:border-white"
-      ref={inputRef}
-      value={input}
-      onChange={(e) => setInput(e.target.value)}
-      placeholder="start typing ..."
+      type={type}
+      className={className}
+      ref={ref}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
     />
   );
-};
+});
