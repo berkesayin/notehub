@@ -1,14 +1,13 @@
 import { Toaster } from "react-hot-toast";
-import { CreateNote } from "../CreateNote";
-import { NoteList } from "../NoteList";
+import { NotehubList } from "../NotehubList";
+import { NotehubForm } from "../NotehubForm";
 
 export const Notehub = () => {
   return (
     <div>
-      <h1 className="text-4xl font-bold">NoteHub - Keep Your Notes!</h1>
       <Toaster position="bottom-center" />
-      <CreateNote />
-      <NoteList />
+      <NotehubForm />
+      <NotehubList />
     </div>
   );
 };

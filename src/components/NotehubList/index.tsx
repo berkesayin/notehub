@@ -1,4 +1,4 @@
-export const NoteList = () => {
+export const NotehubList = () => {
   return (
     <div>
       <p>Note List Component</p>
