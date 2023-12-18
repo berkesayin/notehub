@@ -11,6 +11,7 @@ export const NotehubForm = () => {
       inputRef.current.focus();
     }
   }, []);
+
   const handleSubmission = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("form has been submitted");
