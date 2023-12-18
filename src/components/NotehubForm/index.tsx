@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { NotehubButton } from "../NotehubButton";
 import { NotehubInput } from "../NotehubInput";
+import { useNotehubContext } from "../../contexts/useNotehubContext";
+import { toast } from "react-hot-toast";
 
 export const NotehubForm = () => {
   const [input, setInput] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const { addNoteCard } = useNotehubContext();
 
   useEffect(() => {
     if (inputRef.current) {
@@ -15,6 +18,13 @@ export const NotehubForm = () => {
   const handleSubmission = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("form has been submitted");
+    if (input.trim() !== "") {
+      addNoteCard(input);
+      setInput("");
+      toast.success("New note added successfully!");
+    } else {
+      toast.error("Form input cannot be empty!");
+    }
   };
 
   return (
