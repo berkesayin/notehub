@@ -1,6 +1,8 @@
 import { useNotehubContext } from "../../contexts/useNotehubContext";
 import { SiStarship } from "react-icons/si";
+import { motion } from "framer-motion";
 import { INITIAL_NOTE_CARD_TEXT } from "../../constants";
+import { NotehubCard } from "../NotehubCard";
 
 export const NotehubList = () => {
   const { noteCards } = useNotehubContext();
@@ -17,10 +19,10 @@ export const NotehubList = () => {
   }
 
   return (
-    <ul className="grid max-w-lg gap-2 px-5 m-auto">
+    <motion.ul className="grid max-w-lg gap-2 px-5 m-auto">
       {noteCards.map((noteCard) => (
-        <li key={noteCard}>{noteCard}</li>
+        <NotehubCard noteCard={noteCard} key={noteCard.id} />
       ))}
-    </ul>
+    </motion.ul>
   );
 };

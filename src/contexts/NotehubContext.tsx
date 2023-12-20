@@ -1,16 +1,22 @@
 import { createContext, useState } from "react";
-import { ContextValue } from "../types";
+import { ContextValue, NoteCard } from "../types";
+import { nanoid } from "nanoid";
 
 export const NotehubContext = createContext<ContextValue | undefined>(
   undefined
 );
 
 export const NotehubProvider = (props: { children: React.ReactNode }) => {
-  const [noteCards, setNoteCards] = useState<string[]>([]);
+  const [noteCards, setNoteCards] = useState<NoteCard[]>([]);
 
   // Add new note
   const addNoteCard = (text: string) => {
-    setNoteCards([...noteCards, text]);
+    const newNoteCard: NoteCard = {
+      id: nanoid(),
+      text,
+      status: "undone",
+    };
+    setNoteCards([...noteCards, newNoteCard]);
   };
 
   const contextValue: ContextValue = {
