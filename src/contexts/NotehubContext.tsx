@@ -17,7 +17,6 @@ export const NotehubProvider = (props: { children: React.ReactNode }) => {
     null
   );
 
-  // Add new note
   const addNoteCard = (text: string) => {
     const newNoteCard: NoteCard = {
       id: nanoid(),
@@ -27,14 +26,12 @@ export const NotehubProvider = (props: { children: React.ReactNode }) => {
     setNoteCards([...noteCards, newNoteCard]);
   };
 
-  // Delete a note
   const deleteNoteCard = (id: string) => {
     setNoteCards((prevNoteCards) =>
       prevNoteCards.filter((noteCard) => noteCard.id !== id)
     );
   };
 
-  // Edit a note
   const editNoteCard = (id: string, text: string) => {
     setNoteCards((prevNoteCards) => {
       return prevNoteCards.map((noteCard) => {
@@ -46,7 +43,6 @@ export const NotehubProvider = (props: { children: React.ReactNode }) => {
     });
   };
 
-  // Update status of a note
   const updateNoteCardStatus = (id: string) => {
     setNoteCards((prevNoteCards) => {
       return prevNoteCards.map((noteCard) => {

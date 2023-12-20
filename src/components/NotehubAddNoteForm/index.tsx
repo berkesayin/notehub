@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { useNotehubContext } from "../../contexts/useNotehubContext";
 import { NotehubButton } from "../NotehubButton";
 import { NotehubInput } from "../NotehubInput";
-import { useNotehubContext } from "../../contexts/useNotehubContext";
 import { toast } from "react-hot-toast";
 
 export const NotehubAddNoteForm = () => {
@@ -17,7 +17,7 @@ export const NotehubAddNoteForm = () => {
 
   const handleSubmission = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("form has been submitted");
+
     if (input.trim() !== "") {
       addNoteCard(input);
       setInput("");

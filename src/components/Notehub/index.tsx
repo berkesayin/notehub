@@ -1,6 +1,6 @@
-import { Toaster } from "react-hot-toast";
-import { NotehubList } from "../NotehubList";
 import { NotehubAddNoteForm } from "../NotehubAddNoteForm";
+import { NotehubList } from "../NotehubList";
+import { Toaster } from "react-hot-toast";
 
 export const Notehub = () => {
   return (

@@ -1,9 +1,9 @@
 import { useNotehubContext } from "../../contexts/useNotehubContext";
-import { toast } from "react-hot-toast";
 import { NotehubButton } from "../NotehubButton";
+import { NotehubCardStatusProps } from "../../types";
+import { toast } from "react-hot-toast";
 import { BsCheck2Square } from "react-icons/bs";
 import { TbRefresh } from "react-icons/tb";
-import { NotehubCardStatusProps } from "../../types";
 
 export const NotehubCardStatus = ({ noteCard }: NotehubCardStatusProps) => {
   const { updateNoteCardStatus } = useNotehubContext();

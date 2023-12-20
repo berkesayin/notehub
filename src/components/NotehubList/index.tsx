@@ -1,8 +1,8 @@
 import { useNotehubContext } from "../../contexts/useNotehubContext";
-import { SiStarship } from "react-icons/si";
-import { motion } from "framer-motion";
-import { INITIAL_NOTE_CARD_TEXT } from "../../constants";
 import { NotehubCard } from "../NotehubCard";
+import { INITIAL_NOTE_CARD_TEXT } from "../../constants";
+import { motion } from "framer-motion";
+import { SiStarship } from "react-icons/si";
 
 export const NotehubList = () => {
   const { noteCards } = useNotehubContext();

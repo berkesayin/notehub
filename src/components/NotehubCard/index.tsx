@@ -1,10 +1,10 @@
 import { useNotehubContext } from "../../contexts/useNotehubContext";
-import { NotehubCardProps } from "../../types";
-import { motion } from "framer-motion";
-import { NotehubEditNoteForm } from "../NotehubEditNoteForm";
 import { NotehubCardStatus } from "../NotehubCardStatus";
 import { NotehubCardDeletion } from "../NotehubCardDeletion";
 import { NotehubCardEdit } from "../NotehubCardEdit";
+import { NotehubEditNoteForm } from "../NotehubEditNoteForm";
+import { NotehubCardProps } from "../../types";
+import { motion } from "framer-motion";
 import cn from "classnames";
 
 export const NotehubCard = ({ noteCard }: NotehubCardProps) => {

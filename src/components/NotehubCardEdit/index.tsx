@@ -1,8 +1,8 @@
-import { FaRegEdit } from "react-icons/fa";
-import { NotehubButton } from "../NotehubButton";
-import { useNotehubContext } from "../../contexts/useNotehubContext";
 import { useRef } from "react";
+import { useNotehubContext } from "../../contexts/useNotehubContext";
+import { NotehubButton } from "../NotehubButton";
 import { NotehubCardEditProps } from "../../types";
+import { FaRegEdit } from "react-icons/fa";
 
 export const NotehubCardEdit = ({ noteCard }: NotehubCardEditProps) => {
   const { setEditingNoteCardText, setEditingNoteCardId } = useNotehubContext();

@@ -1,8 +1,8 @@
-import { RiDeleteBin7Line } from "react-icons/ri";
-import { NotehubButton } from "../NotehubButton";
 import { useNotehubContext } from "../../contexts/useNotehubContext";
-import { toast } from "react-hot-toast";
+import { NotehubButton } from "../NotehubButton";
 import { NotehubCardDeletionProps } from "../../types";
+import { toast } from "react-hot-toast";
+import { RiDeleteBin7Line } from "react-icons/ri";
 
 export const NotehubCardDeletion = ({ noteCard }: NotehubCardDeletionProps) => {
   const { deleteNoteCard } = useNotehubContext();
