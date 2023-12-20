@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import { ContextValue, NoteCard } from "../types";
 import { nanoid } from "nanoid";
 
@@ -7,7 +8,10 @@ export const NotehubContext = createContext<ContextValue | undefined>(
 );
 
 export const NotehubProvider = (props: { children: React.ReactNode }) => {
-  const [noteCards, setNoteCards] = useState<NoteCard[]>([]);
+  const [noteCards, setNoteCards] = useLocalStorage<NoteCard[]>(
+    "noteCards",
+    []
+  );
 
   // Add new note
   const addNoteCard = (text: string) => {
@@ -19,9 +23,46 @@ export const NotehubProvider = (props: { children: React.ReactNode }) => {
     setNoteCards([...noteCards, newNoteCard]);
   };
 
+  // Delete a note
+  const deleteNoteCard = (id: string) => {
+    setNoteCards((prevNoteCards) =>
+      prevNoteCards.filter((noteCard) => noteCard.id !== id)
+    );
+  };
+
+  // Edit a note
+  const editNoteCard = (id: string, text: string) => {
+    setNoteCards((prevNoteCards) => {
+      return prevNoteCards.map((noteCard) => {
+        if (noteCard.id === id) {
+          return { ...noteCard, text };
+        }
+        return noteCard;
+      });
+    });
+  };
+
+  // Update status of a note
+  const updateNoteCardStatus = (id: string) => {
+    setNoteCards((prevNoteCards) => {
+      return prevNoteCards.map((noteCard) => {
+        if (noteCard.id === id) {
+          return {
+            ...noteCard,
+            status: noteCard.status === "undone" ? "completed" : "undone",
+          };
+        }
+        return noteCard;
+      });
+    });
+  };
+
   const contextValue: ContextValue = {
     noteCards,
     addNoteCard,
+    deleteNoteCard,
+    editNoteCard,
+    updateNoteCardStatus,
   };
 
   return (

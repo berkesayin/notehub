@@ -1,6 +1,9 @@
 export interface ContextValue {
   noteCards: NoteCard[];
   addNoteCard: (text: string) => void;
+  deleteNoteCard: (id: string) => void;
+  editNoteCard: (id: string, text: string) => void;
+  updateNoteCardStatus: (id: string) => void;
 }
 
 export interface NoteCard {
