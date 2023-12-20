@@ -1,11 +1,14 @@
-export const NotehubButton = () => {
+import { NotehubButtonProps } from "../../types";
+
+export const NotehubButton = ({
+  type,
+  className,
+  onClick,
+  children,
+}: NotehubButtonProps) => {
   return (
-    <button
-      type="submit"
-      className="px-5 py-2 text-sm font-normal text-blue-300 bg-blue-900 border-2 border-blue-900 
-            active:scale-95 rounded-xl"
-    >
-      Submit
+    <button type={type} className={className} onClick={onClick}>
+      {children}
     </button>
   );
 };

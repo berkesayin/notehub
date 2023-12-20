@@ -4,7 +4,7 @@ import { NotehubInput } from "../NotehubInput";
 import { useNotehubContext } from "../../contexts/useNotehubContext";
 import { toast } from "react-hot-toast";
 
-export const NotehubForm = () => {
+export const NotehubAddNoteForm = () => {
   const [input, setInput] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
   const { addNoteCard } = useNotehubContext();
@@ -39,7 +39,13 @@ export const NotehubForm = () => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="start typing ..."
         />
-        <NotehubButton />
+        <NotehubButton
+          type="submit"
+          className="px-5 py-2 text-sm font-normal text-blue-300 bg-blue-900 border-2 border-blue-900 
+            active:scale-95 rounded-xl"
+        >
+          Save
+        </NotehubButton>
       </div>
     </form>
   );

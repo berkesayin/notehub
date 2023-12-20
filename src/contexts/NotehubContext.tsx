@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 import { ContextValue, NoteCard } from "../types";
 import { nanoid } from "nanoid";
@@ -11,6 +11,10 @@ export const NotehubProvider = (props: { children: React.ReactNode }) => {
   const [noteCards, setNoteCards] = useLocalStorage<NoteCard[]>(
     "noteCards",
     []
+  );
+  const [editingNoteCardText, setEditingNoteCardText] = useState<string>("");
+  const [editingNoteCardId, setEditingNoteCardId] = useState<string | null>(
+    null
   );
 
   // Add new note
@@ -63,6 +67,10 @@ export const NotehubProvider = (props: { children: React.ReactNode }) => {
     deleteNoteCard,
     editNoteCard,
     updateNoteCardStatus,
+    editingNoteCardText,
+    setEditingNoteCardText,
+    editingNoteCardId,
+    setEditingNoteCardId,
   };
 
   return (

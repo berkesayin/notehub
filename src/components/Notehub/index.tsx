@@ -1,12 +1,12 @@
 import { Toaster } from "react-hot-toast";
 import { NotehubList } from "../NotehubList";
-import { NotehubForm } from "../NotehubForm";
+import { NotehubAddNoteForm } from "../NotehubAddNoteForm";
 
 export const Notehub = () => {
   return (
     <div>
       <Toaster position="bottom-center" />
-      <NotehubForm />
+      <NotehubAddNoteForm />
       <NotehubList />
     </div>
   );
