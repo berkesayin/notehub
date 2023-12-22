@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNotehubContext } from "../../contexts/useNotehubContext";
-import { NotehubInput } from "../NotehubInput";
+import { NotehubTextArea } from "../NotehubTextArea";
 import { NotehubButton } from "../NotehubButton";
 import { NotehubCardProps } from "../../types";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 export const NotehubEditNoteForm = ({ noteCard }: NotehubCardProps) => {
   const { editNoteCard, editingNoteCardId } = useNotehubContext();
 
-  const editInputRef = useRef<HTMLInputElement>(null);
+  const editInputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (editingNoteCardId !== null && editInputRef.current) {
@@ -32,22 +32,21 @@ export const NotehubEditNoteForm = ({ noteCard }: NotehubCardProps) => {
   };
 
   return (
-    <motion.div layout className="flex gap-2">
-      <NotehubInput
-        type="text"
+    <motion.div layout className="flex flex-col gap-2">
+      <NotehubTextArea
         className="w-full px-5 py-2 bg-transparent border-2 outline-none border-zinc-600 rounded-xl 
-            placeholder:text-zinc-500 focus:border-white"
+      placeholder:text-zinc-500 focus:border-white"
         ref={editInputRef}
         value={editingNoteCardText}
         onChange={(e) => setEditingNoteCardText(e.target.value)}
         placeholder="Update your note...."
       />
       <NotehubButton
-        className="px-5 py-2 text-sm font-normal text-orange-300 bg-orange-900 border-2 
-              border-orange-900 active:scale-95 rounded-xl"
+        className="w-1/2 px-5 py-2 text-sm font-normal text-white bg-zinc-600 border-2 border-zinc-600 
+      hover:bg-zinc-800 active:scale-95 rounded-xl mx-auto"
         onClick={() => handleUpdateNoteCard(noteCard.id)}
       >
-        Update
+        Update The Note
       </NotehubButton>
     </motion.div>
   );

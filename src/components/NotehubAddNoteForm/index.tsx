@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useNotehubContext } from "../../contexts/useNotehubContext";
 import { NotehubButton } from "../NotehubButton";
-import { NotehubInput } from "../NotehubInput";
+import { NotehubTextArea } from "../NotehubTextArea";
 import { toast } from "react-hot-toast";
 
 export const NotehubAddNoteForm = () => {
   const [input, setInput] = useState<string>("");
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const { addNoteCard } = useNotehubContext();
 
   useEffect(() => {
@@ -29,11 +29,10 @@ export const NotehubAddNoteForm = () => {
 
   return (
     <form onSubmit={handleSubmission}>
-      <div className="flex items-center w-full max-w-lg gap-2 p-5 m-auto">
-        <NotehubInput
-          type="text"
-          className="w-full px-5 py-2 bg-transparent border-2 outline-none border-zinc-600 rounded-xl 
-            placeholder:text-zinc-500 focus:border-white"
+      <div className="flex flex-col items-center w-full max-w-lg gap-2 p-5 m-auto">
+        <NotehubTextArea
+          className="w-full px-5 py-2 bg-transparent border-2 outline-none border-zinc-600 rounded-xl
+      placeholder:text-zinc-500 focus:border-white"
           ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -41,10 +40,10 @@ export const NotehubAddNoteForm = () => {
         />
         <NotehubButton
           type="submit"
-          className="px-5 py-2 text-sm font-normal text-blue-300 bg-blue-900 border-2 border-blue-900 
+          className="px-6 py-2 text-sm font-normal text-white bg-zinc-600 border-2 border-zinc-600 hover:bg-zinc-900
             active:scale-95 rounded-xl"
         >
-          Save
+          Add New Note
         </NotehubButton>
       </div>
     </form>
