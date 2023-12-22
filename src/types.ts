@@ -23,6 +23,11 @@ export interface NotehubButtonProps {
   children?: React.ReactNode;
 }
 
+export interface NotehubTitleProps {
+  text: string;
+  className: string;
+}
+
 export interface NotehubCardProps {
   noteCard: NoteCard;
 }

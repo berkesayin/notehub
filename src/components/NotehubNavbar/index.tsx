@@ -9,10 +9,10 @@ export const NotehubNavbar = () => {
         </NotehubButton>
         <div className="flex space-x-3">
           <NotehubButton className="bg-gray-800 rounded-xl p-3 tracking-wider">
-            Tasks Completed
+            Notes Completed
           </NotehubButton>
           <NotehubButton className="bg-gray-700 rounded-xl p-3 tracking-wider">
-            Tasks Undone
+            Notes Undone
           </NotehubButton>
         </div>
       </div>
