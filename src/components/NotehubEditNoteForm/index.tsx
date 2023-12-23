@@ -42,8 +42,8 @@ export const NotehubEditNoteForm = ({ noteCard }: NotehubCardProps) => {
         placeholder="Update your note...."
       />
       <NotehubButton
-        className="w-1/2 px-5 py-2 text-sm font-normal text-white bg-zinc-600 border-2 border-zinc-600 
-      hover:bg-zinc-800 active:scale-95 rounded-xl mx-auto"
+        className="w-1/2 px-5 py-2 text-sm font-normal text-white bg-gray-800 border-2 border-gray-800 
+        hover:bg-zinc-800 active:scale-95 rounded-xl mx-auto"
         onClick={() => handleUpdateNoteCard(noteCard.id)}
       >
         Update The Note
