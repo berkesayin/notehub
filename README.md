@@ -1,10 +1,10 @@
 # Notehub - Keep And Organize Your Notes
 
-### Contents
+> **Notehub**: Welcome to `Notehub` – your go-to solution for straightforward note management issues.
 
 This lightweight application, `Notehub`, is designed to simplify your notekeeping experience, allowing you to add, update, and delete notes with ease.
 
-> **Notehub**: Welcome to `Notehub` – your go-to solution for straightforward note management issues.
+### Contents
 
 - [About The Project](#project)
 - [Tech Stack](#tech-stack)
@@ -37,7 +37,7 @@ This lightweight application, `Notehub`, is designed to simplify your notekeepin
 Clone the repository.
 
 ```bash
-git clone https://github.com/berkesayin/northwind-store.git
+git clone https://github.com/berkesayin/notehub.git
 ```
 
 Install the dependencies.
@@ -52,7 +52,7 @@ Locate the root directory at terminal, and start the project.
 npm run dev
 ```
 
-Navigate to [http://localhost:5173](http://localhost:5173) and take your notes :)
+Navigate to [http://localhost:5173](http://localhost:5173) and take your notes.
 
 ### Future Improvements <a name="dev"></a>
 
