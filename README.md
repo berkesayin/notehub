@@ -1,30 +1,71 @@
-# React + TypeScript + Vite
+# Notehub - Keep And Organize Your Notes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Contents
 
-Currently, two official plugins are available:
+This lightweight application, `Notehub`, is designed to simplify your notekeeping experience, allowing you to add, update, and delete notes with ease.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> **Notehub**: Welcome to `Notehub` – your go-to solution for straightforward note management issues.
 
-## Expanding the ESLint configuration
+- [About The Project](#project)
+- [Tech Stack](#tech-stack)
+- [Usage](#usage)
+- [Future Improvements](#dev)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### About The Project <a name="project"></a>
 
-- Configure the top-level `parserOptions` property like this:
+- With `Notehub`, you have the power to effortlessly create, update, and delete notes at your fingertips. Whether you're a planner or someone who just loves staying organized, `Notehub` is designed for you.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- Think of it like a personal notebook that you can take anywhere, without the risk of losing a page.
+
+- Finally, Whether you're a developer looking for an easy-to-use task tracker or a student organizing lecture notes, `Notehub` adapts to your needs.
+
+![img](src/assets/notehub1.png)
+
+![img](src/assets/notehub2.png)
+
+### Tech Stack <a name="tech-stack"></a>
+
+##### Technologies used for Notehub:
+
+- React
+- TypeScript
+- Context API
+- Tailwind CSS
+
+### Usage <a name="usage"></a>
+
+Clone the repository.
+
+```bash
+git clone https://github.com/berkesayin/northwind-store.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Install the dependencies.
+
+```bash
+npm install
+```
+
+Locate the root directory at terminal, and start the project.
+
+```bash
+npm run dev
+```
+
+Navigate to [http://localhost:5173](http://localhost:5173) and take your notes :)
+
+### Future Improvements <a name="dev"></a>
+
+> **Note**: The project is still under development. The features listed below will be developed and integrated to the `Notehub` application.
+
+##### Features
+
+- Drag and drop structure for note cards.
+- Additional column for completed notes. When a note is created, it will be added the `undone tasks` column first, once it is done, it will be moved to `completed tasks` column.
+- Easiliy integration to other projects that would need to use the features which `NoteHub` offers.
+- Validation for TextArea component.
+- More functionalities for TextArea component including italic, bold, unordered list, list features.
+- Live Demo.
+- Functional responsive design, all issues solved.
+- Nice hover effect for note cards.
+- Badges for note cards to categorize notes.
