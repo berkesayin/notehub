@@ -3,6 +3,7 @@ import { useNotehubContext } from "../../contexts/useNotehubContext";
 import { NotehubButton } from "../NotehubButton";
 import { NotehubTextArea } from "../NotehubTextArea";
 import { toast } from "react-hot-toast";
+import { ADD_NEW_NOTE_TEXT } from "../../constants";
 
 export const NotehubAddNoteForm = () => {
   const [input, setInput] = useState<string>("");
@@ -43,7 +44,7 @@ export const NotehubAddNoteForm = () => {
           className="px-6 py-2 text-sm font-normal text-white bg-gray-800 border-2 border-gray-800 
             hover:bg-zinc-900 active:scale-95 rounded-xl"
         >
-          Add New Note
+          {ADD_NEW_NOTE_TEXT}
         </NotehubButton>
       </div>
     </form>
